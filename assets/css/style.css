@@ -1,0 +1,70 @@
+#background-image{
+    background: url("../images/triviaBackground.PNG"); 
+    width: 100% !important;
+    height: 100% !important;
+ 
+}
+
+#main-container {
+    padding: 50px;
+    min-height: calc(100vh - 70px);
+  }
+
+  .container {
+    height: 600px;
+    width: 50%;
+    margin: 10px auto;
+    background-color: white;
+    border-radius: 25px;
+    text-align: center;
+  }
+  .btn {
+    position: relative;
+    bottom: -50px;
+  }
+  h5:hover{
+      background-color: rgba(255, 0, 0, 0.5);
+      border: 1px solid red;
+      padding: 5px;
+      color: white
+  }
+#header{
+      color: #FFFFF0;
+      padding: 30px 0px
+  }
+
+ #instructions{
+     background: white;
+     font-size: 18px;
+     font-family: cursive;
+     border-radius: 25px;
+     padding: 30px 
+ } 
+
+ #randomNumber{
+    background: linear-gradient(to top, rgb(238, 156, 167), rgb(255, 221, 225));
+    font-weight: bold;
+    font-size: 30px;
+    border: 1px solid black;
+    padding: 10px
+    
+ }
+
+#winsandLosses{
+    background: linear-gradient(to top, rgb(238, 156, 167), rgb(255, 221, 225));
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 10px
+}
+#totalScore{
+    background: linear-gradient(to top, rgb(238, 156, 167), rgb(255, 221, 225));
+    border: 1px solid black;
+    font-size: 20px;
+    padding: 10px
+}
+
+img{cursor: pointer;
+    padding: 3px
+}
+
+ 
