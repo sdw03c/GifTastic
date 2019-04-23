@@ -1,73 +1,63 @@
-$(document).ready(function() {
-    var wins = 0,
-        losses = 0,
-        totalScore = 0,
-        minCrysRandomNumber = 1,
-        maxCrysRandomNumber = 12
-        minRandomNumber = 19,
-        maxRandomNumber = 120
-    var randomNumber = Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1)) + minRandomNumber
-    var rubyRandomNumber = Math.floor(Math.random() * (maxCrysRandomNumber - minCrysRandomNumber + 1)) + minCrysRandomNumber
-    var azuriteRandomNumber = Math.floor(Math.random() * (maxCrysRandomNumber - minCrysRandomNumber + 1)) + minCrysRandomNumber
-    var emeraldRandomNumber =  Math.floor(Math.random() * (maxCrysRandomNumber- minCrysRandomNumber + 1)) + minCrysRandomNumber
-    var citrineRandomNumber = Math.floor(Math.random() * (maxCrysRandomNumber - minCrysRandomNumber + 1)) + minCrysRandomNumber
+//$(document).ready(function() {
+var characters = ["Goku", "Vegeta", "Gohan", "Trunks", "Piccolo", "Krillin", "Bulma", "Android 18"]
 
+//var numberOfCharacters = characters.length
+$(document).on("click", ".list-Characters", displayCharacters);
+function displayCharacters(){
+    var dbzCharacter = $(this).attr("data");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + dbzCharacter + "&api_key=Nn3LVacnO3vBV7BmH75PRyMNw4rZb0Lq&limit=10";
+    
+$.ajax({
+    url: queryURL,
+    method: "GET"
+})
+    .then(function(response) {
+        var results = response.data
 
-    $("#randomNumber").text(randomNumber)
-    $("#wins").append(wins) //not really needed
-    $("#losses").append(losses) //not really needed
-    $("#totalScore").append(totalScore) //not really needed
+        console.log(results);
 
-$("#rubyCrystal").on("click", function(){
-    totalScore=totalScore+rubyRandomNumber;
-    $("#totalScore").text("Your total score is: " + totalScore)
-    winsLosses()
+        // Looping through each result item and creating information divs to put the results in the html
+
+        for (var x = 0; x < results.length; x++) {
+
+            var gifDiv = $("<div>");
+            var dbzImage = $("<img>");
+
+            var rating = results[x].rating.toUpperCase();
+
+            var newParagraph = $("<p>").html("<h5>" + "Rating: " + rating + " </h5>")
+
+            dbzImage.attr("src", results[x].images.fixed_height.url);
+                    
+            gifDiv.append(newParagraph);
+
+            gifDiv.append(dbzImage);
+
+            $("#gifs").prepend(gifDiv);
+
+        }
 
 })
-$("#azuriteCrystal").on("click", function(){
-    totalScore=totalScore+azuriteRandomNumber;
-    $("#totalScore").text("Your total score is: " + totalScore)
-    winsLosses()
-})
 
-$("#emeraldCrystal").on("click", function(){
-    totalScore=totalScore+emeraldRandomNumber;
-    $("#totalScore").text("Your total score is: " + totalScore)
-    winsLosses()
-})
-
-$("#citrineCrystal").on("click", function(){
-    totalScore=totalScore+citrineRandomNumber;
-    $("#totalScore").text("Your total score is: " + totalScore)
-    winsLosses()
-})
-
-
-function winsLosses(){
-if(totalScore===randomNumber){
-alert("You Won! You're a Winner!");
-wins++;
-$("#wins").text("Wins: " + wins)
-reset()
 }
-else if (totalScore > randomNumber){
-alert("You lost. Loser...");
-losses++;
-$("#losses").text("Losses: " + losses);
-reset()
-}
+function renderTabs(){
+    var numberOfCharacters = characters.length
+    $("#li-view").empty();
+for(var i = 0; i < numberOfCharacters; i++){
+$("#li-view").append("<li>" + characters[i] + "</li>").addClass("list-Characters").attr("data",characters[i])
+$(".list-Characters").css({"cursor":"pointer", "line-height":"20px"})
 }
 
-function reset(){
-    totalScore = 0;
-    $("#totalScore").text("Your total score is: " + totalScore)
-    randomNumber = Math.floor(Math.random() * (maxRandomNumber - minRandomNumber + 1)) + minRandomNumber
-    $("#randomNumber").text(randomNumber)
-    rubyRandomNumber = Math.floor(Math.random() * (maxCrysRandomNumber - minCrysRandomNumber + 1)) + minCrysRandomNumber
-    azuriteRandomNumber = Math.floor(Math.random() * (maxCrysRandomNumber - minCrysRandomNumber + 1)) + minCrysRandomNumber
-    emeraldRandomNumber =  Math.floor(Math.random() * (maxCrysRandomNumber- minCrysRandomNumber + 1)) + minCrysRandomNumber
-    citrineRandomNumber = Math.floor(Math.random() * (maxCrysRandomNumber - minCrysRandomNumber + 1)) + minCrysRandomNumber 
 }
 
-
+$("#add-character").on("click", function(event) {
+    event.preventDefault();
+    console.log($("#character-input").val());
+    
+    characters.push($("#character-input").val().trim())
+    renderTabs();  
+    $("#dbz-form").trigger("reset")
 });
+
+//});
+renderTabs();

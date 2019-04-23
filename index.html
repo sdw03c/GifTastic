@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en-us">
 
 
@@ -7,8 +6,14 @@
     <head>
 
         <meta charset="UTF-8">
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
     
-        <title>Crystal Game</title>
+        <title>GifTastic</title>
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+        <title>GifTastic!</title>
     
       <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
       <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -20,44 +25,54 @@
     </head>
 
 <body id = "background-image">
+        <div class="wrapper">
+
+
+
+                <header id="masthead">
+              
+                  <div class="container">
+              
+                    <a href="" id="logo">DBZ</a>
+              
+                    <nav>
+              
+                      <ul style="color:black">
+              
+                        <li id="li-view" style="color:black"><a></a></li>
+    
+              
+                      </ul>
+              
+                    </nav>
+              
+                  </div>
+              
+                </header>
+              
+              
     <div id="main-container" class="container">
-        <h1 id="header">Crystals Collector!</h1>
+        <h1 id="header"></h1>
     <div class ="row">
-        <div class = "col-sm-6" id="instructions">
-            <p>You will be given a random number at the start of the game.</p>
-            <p>There are four crystals below. By clicking on a crystal you 
-                will add a specific amount of points to your total score.</p>
-            <p>You win the game by matching your total score to random 
-                number, you lose the game if your total score goes above
-            the random number.</p>
-            <p>The value of each crystal is hidden from you until you 
-                click on it.</p>
-            <p>Each time when the game starts, the game will change the 
-                value of each crystal.</p>    
-
-
+        <div class = "col-sm-8" id="gifs">
+          
         </div>
        
-        <div class="col-sm-6" style="padding-left: 90px">
-                <div class = "row" style="padding: 20px">
-                        <div id= "randomNumber" class = "col-sm-6"></div>
-                        <div id= "winsandLosses" class = "col-sm-6"><p id="wins" style="color:green">Wins: </p>
-                        <p id="losses" style = color:red>Losses: </p></div>
+        <div class="col-sm-4" style="padding-left: 90px">
+                <form id="dbz-form" >
+                       <h4 style="background-color:orangered; color:white; padding:5px"><label for="dbz-input">Search for a new DBZ Character!</label></h4>
+                        <input id="character-input" type="text" id="" class="form-control" style="margin-bottom:5px; color:black">
+                  
+                        <!-- Button triggers new movie to be added -->
+                        <input id="add-character" class="btn btn-primary" type="submit" value="Search">
+                      </form>
                  </div>
-                 <div class = "row" style="padding: 20px">
-             <img id="rubyCrystal" src="assets/images/rubyCrystal.PNG">
-             <img id="azuriteCrystal" src="assets/images/azuriteCrystal.PNG">   
-             <img id="emeraldCrystal" src="assets/images/emeraldCrystal.PNG"> 
-             <img id="citrineCrystal" src="assets/images/citrineCrystal.PNG"> 
-                 </div>
-         <div id = "totalScore" class = "col-sm-12">Your total score is: </div>
-
-        </div>
+       
 
     </div>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script type="text/javascript" src="assets/javascript/game.js"></script>
+<script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>

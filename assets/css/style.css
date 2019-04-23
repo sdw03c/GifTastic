@@ -1,8 +1,181 @@
+
+
+/* header */
+
+
+
+#masthead {
+
+    position: fixed;
+  
+    z-index: 99;
+  
+  
+  
+    /* Box-model */
+  
+    width: 100%;
+  
+  
+  
+    /* Positioning */
+  
+    margin: 0 0 30px;
+  
+    overflow: auto;
+  
+  
+  
+    /* Typography */
+  
+    color: #fff;
+  
+    background: #fff;
+  
+  
+  
+    /* Visual */
+  
+    border-bottom: 2px solid #ccc;
+  
+  }
+  
+  
+  
+  #logo {
+  
+    float: left;
+  
+  
+  
+    /* Box-model */
+  
+    width: 150px;
+  
+    height: 50px;
+  
+  
+  
+    /* Typography */
+  
+    font-family: Georgia, Times, "Times New Roman", serif;
+  
+    font-size: 20px;
+  
+    line-height: 30px;
+  
+    color: #fff;
+  
+    text-align: center;
+  
+    text-decoration: none;
+  
+  
+  
+    /* Visual */
+  
+    background: orangered;
+  
+  }
+  
+
+  
+  
+  nav {
+  
+    /* Box-model */
+  
+    float: right;
+  
+  
+  
+    /* Positioning */
+  
+    margin-top: 25px;
+  
+  }
+  
+  
+  
+  nav li {
+  
+    display: inline-block;
+  
+  
+  
+    /* Box-model */
+  
+    padding-left: 15px;
+  
+  
+  
+    /* Positioning */
+  
+    margin-left: 15px;
+  
+  
+  
+    /* Typography */
+  
+    line-height: 18px;
+  
+  
+  
+    /* Visual */
+  
+    border-left: 1px solid #efefef;
+  
+  }
+  
+  
+  
+  nav a {
+  
+    /* Typography */
+  
+    color: #999;
+  
+    text-decoration: none;
+  
+  }
+  
+  
+  
+  nav a:hover {
+  
+    color: #666;
+  
+  }
+  
+  
+  
+  nav li:first-child {
+  
+    /* Box-model */
+  
+    padding-left: 0;
+  
+  
+  
+    /* Positioning */
+  
+    margin-left: 0;
+  
+  
+  
+    /* Visual */
+  
+    border-left: 0 none;
+  
+  }
+  
+  
+
 #background-image{
-    background: url("../images/crystalBackground.png"); 
+    background: url("../images/dbzBackground.png"); 
     width: 100% !important;
     height: 100% !important;
-    background-repeat: no-repeat
+    
 }
 
 #main-container {
